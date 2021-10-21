@@ -1,0 +1,11 @@
+1.      SELECT `students`.*, `degrees`.`name`
+        FROM `students`
+        INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+        WHERE `degrees`.`name` = 'corso di laurea in economia'
+
+2.      SELECT `degrees`.*, `departments`.`name` AS 'nome_dipartimento'
+        FROM `degrees`
+        JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+        WHERE `departments`.`name` = 'dipartimento di neuroscienze';
+
+3.      
