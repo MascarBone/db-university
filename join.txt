@@ -41,7 +41,7 @@
         INNER JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id`
         INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 
-7.      SELECT `students`.`surname`, `students`.`name`, COUNT(exam_student.exam_id) AS 'tentativi_esame'
+7.      SELECT `exam_student`.`student_id` ,`students`.`surname`, `students`.`name`, COUNT(exam_student.exam_id) AS 'tentativi_esame'
         FROM `students`
         INNER JOIN `exam_student` ON `students`.`id` = `exam_student`.`student_id`
-        GROUP BY `students`.`surname`,`students`.`name`
+        GROUP BY `exam_student`.`student_id`, `students`.`surname`,`students`.`name`        
