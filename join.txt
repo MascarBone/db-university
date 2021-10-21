@@ -19,3 +19,13 @@
         INNER JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
         INNER JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`
         WHERE `teachers`.`id` = 44;
+
+4.      SELECT `students`.`surname` AS 'cognome_studente', `students`.`name` AS 'nome_studente',
+        `degrees`.`name` AS 'corso_di_laurea', `degrees`.`level`, `degrees`.`address` AS 'address_laurea', `degrees`.`email` AS 'email_laurea', `degrees`.`website` AS 'website_laurea',
+        `departments`.`name` AS 'dipartimento', `departments`.`address` AS 'address_dipartimento', `departments`.`phone` AS 'phone_dipartimento', `departments`.`email` AS 'email_dipartimento', `departments`.`website` AS 'website_dipartimento', `departments`.`head_of_department`
+        FROM `students`
+        INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+        INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`  
+        ORDER BY  `cognome_studente`, `nome_studente` ASC
+
+5.      
